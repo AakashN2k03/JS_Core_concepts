@@ -1,4 +1,4 @@
-// 3. filter
+//  filter
 // Purpose: Creates a new array with all elements that pass a test (a provided function).
 // Syntax: array.filter(callback)
 // callback: A function that tests each element.
