@@ -1,0 +1,30 @@
+CORS (Cross-Origin Resource Sharing) - Brief Summary:
+CORS is a security feature implemented by web browsers that controls how websites or web apps from one domain can make requests to a server on a different domain (or port). 
+By default, browsers block cross-origin requests for security reasons to prevent malicious websites from accessing sensitive data.
+
+When is CORS Needed?
+
+When your frontend (e.g., React on localhost:3000) and backend (e.g., Express on localhost:5000) are on different domains, subdomains, or ports.
+When you want to make your API accessible to other websites or apps.
+How CORS Works:
+
+The backend (server) needs to explicitly allow cross-origin requests by sending specific headers in the response.
+These headers tell the browser which domains (origins) are allowed to access the server's resources.
+Using CORS in Express:
+
+You can use the cors middleware to automatically handle CORS in your Express app.
+Example:
+
+const cors = require('cors');
+app.use(cors()); // This allows all domains to access your API.
+
+Scenario Without CORS:
+
+If CORS is not configured, browsers will block requests from different domains, leading to errors like:
+
+Access to XMLHttpRequest at 'http://localhost:5000' from origin 'http://localhost:3000' has been blocked by CORS policy.
+
+When CORS is Useful:
+
+When frontend and backend are on different ports or domains (even during local development).
+When you want your API to be publicly accessible or to allow access from trusted external sites.
