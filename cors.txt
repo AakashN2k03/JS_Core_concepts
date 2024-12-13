@@ -1,4 +1,4 @@
-CORS (Cross-Origin Resource Sharing) - Brief Summary:
+CORS (Cross-Origin Resource Sharing) (Third-party Middleware):
 CORS is a security feature implemented by web browsers that controls how websites or web apps from one domain can make requests to a server on a different domain (or port). 
 By default, browsers block cross-origin requests for security reasons to prevent malicious websites from accessing sensitive data.
 
