@@ -10,7 +10,11 @@ app.use(express.urlencoded({ extended: true }));
 //extended: true: Allows parsing of nested objects (e.g., person[name]=Aakash).
 //extended: false: Only allows flat key-value pairs.
 
-// Route to handle form data
+// eg:name=Aakash&age=24&role=Developer
+// Key-value pairs are joined with =.
+// Each pair is separated by &.
+// Special characters (like spaces) are encoded (e.g., a space becomes %20).
+
 app.post('/form', (req, res) => {
     const { name, age, role } = req.body; // Access parsed data
     if (!name || !age || !role) {
