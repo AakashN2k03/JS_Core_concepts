@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // GET route for /user/getuser
-router.get('/getuser', (req, res) => {
+router.get('/getuser', (req, res) => {          //use controller folder for handling controllers(i.e functions used in routes) so that it will look neat
     res.send("GET method successfully worked");
 });
 
