@@ -1,0 +1,71 @@
+tiny format
+The 'tiny' format is minimalistic and logs basic details of the HTTP request.
+
+It includes:
+HTTP method (e.g., GET, POST, PUT)
+Request URL
+Status code of the response
+Response length (size of the response in bytes)
+Response time (in milliseconds)
+
+sample output:
+
+GET / 200 12ms
+POST /login 404 8ms
+
+GET / -> HTTP method is GET, the requested URL is /, the response status code is 200, and it took 12ms to respond.
+POST /login -> HTTP method is POST, the requested URL is /login, the status code is 404 (not found), and the response time is 8ms.
+
+
+dev format
+The 'dev' format is more colorful and includes:
+
+HTTP method
+URL
+Status code
+Response time
+Response length (size of the response in bytes)
+It is easier to read and includes colors to visually differentiate various parts.
+
+Sample Output:
+
++ 200ms : GET /index.html
+: 404ms : POST /login
+
+In this example:
+GET /index.html: Green color for status 200 (successful request).
+POST /login: Red color for status 404 (error).
+
+dev format also includes some colors:
+
+Green for successful responses (status 2xx)
+Yellow for redirection responses (status 3xx)
+Red for error responses (status 4xx and 5xx)
+
+
+
+combined Format includes:
+
+IP address of the client making the request
+Request method (GET, POST, etc.)
+Requested URL
+HTTP version (e.g., HTTP/1.1)
+Status code
+Response size
+Referrer (the page from which the request was made)
+User-agent (the client's browser information)
+Response time
+This is ideal for production environments where detailed tracking and analytics are needed.
+
+Sample Output:
+::1 - - [10/Dec/2024:10:11:42 +0000] "GET /index.html HTTP/1.1" 200 2326 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" 12ms
+
+In this example:
+::1: The IP address of the client (in this case, local IP ::1 for localhost).
+GET /index.html: The HTTP method GET and the requested URL /index.html.
+HTTP/1.1: The HTTP version used.
+200: The HTTP status code.
+2326: The size of the response body (in bytes).
+"http://localhost:3000/": The referrer URL (where the request originated from).
+"Mozilla/5.0...": The user-agent string, identifying the client's browser and operating system.
+12ms: The time taken to respond to the request.
