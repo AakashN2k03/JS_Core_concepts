@@ -1,4 +1,4 @@
-// Morgan is used to log incoming HTTP requests to your server, which helps in tracking and debugging.
+// Morgan (Third-party Middleware) is used to log incoming HTTP requests to your server, which helps in tracking and debugging.
 // It’s useful for monitoring your app’s behavior, performance, and detecting issues like failed requests.
 
 // it logs each incoming request based on a predefined format or a custom format that you specify.
